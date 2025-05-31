@@ -1,12 +1,10 @@
 ---
 import Layout from '../layout.astro';
-import Logo from '../assets/logo.svg';
-import LinkedInIcon from '../assets/linkedin.svg';
 ---
 
 <Layout>
   <main id="main">
-    <Logo aria-label="Perfect Pitch logo" role="img" />
+    <img src="/assets/logo.svg" aria-label="Perfect Pitch logo" width="80" height="52" />
     <section id="pitch">
       <h1>
         Perfect Pitch er et kor av og for gründere tilknyttet startupmiljøet i
@@ -39,7 +37,12 @@ import LinkedInIcon from '../assets/linkedin.svg';
           rel="noopener noreferrer"
           aria-label="Besøk vår LinkedIn-side"
         >
-          <img src="/assets/linkedin-icon.svg" alt="LinkedIn logo" width="20" height="20" /> LinkedIn
+          <img
+            src="/assets/linkedin-icon.svg"
+            alt="LinkedIn logo"
+            width="20"
+            height="20"
+          /> LinkedIn
         </a>
       </div>
     </section>
@@ -54,6 +57,7 @@ import LinkedInIcon from '../assets/linkedin.svg';
     /* center content */
     justify-content: center;
 
+    width: min(100% - 4rem, 50rem);
     margin-inline: auto;
     max-width: 750px;
     min-height: 100dvh;
