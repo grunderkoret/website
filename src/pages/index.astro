@@ -50,7 +50,10 @@ import Layout from '../layout.astro';
     <section id="actions">
       <p>Vi har det gøy, helt enkelt – lyst til å bli med?</p>
 
-      <div role="group" id="buttons" aria-label="Kontakt oss">
+      <div role="group" class="buttons">
+        <a href="https://ppkor.no/join" class="button primary">
+          Påmelding →
+        </a>
         <a
           class="button"
           href="https://www.linkedin.com/company/gr%C3%BCnderkoret-perfect-pitch/"
@@ -97,6 +100,14 @@ import Layout from '../layout.astro';
 
     gap: 1rem;
   }
+ 
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    gap: 0.5rem;
+  }
 
   .button {
     background-color: hsl(0, 0%, 13%);
@@ -113,6 +124,25 @@ import Layout from '../layout.astro';
     font-weight: 500;
     min-height: 44px;
     min-width: 44px;
+
+    &.primary {
+      background-color: var(--color-brand, hsl(255, 64%, 38%));
+    }
+  }
+  
+  @media (hover: hover) {
+    .button:hover {
+      background-color: hsl(0, 0%, 30%);
+
+      &.primary:hover {
+        background-color: hsl(255, 64%, 48%);
+      }
+    }
+  }
+
+  .button:focus-visible {
+    outline: 3px solid var(--color-brand, hsl(255, 64%, 38%));
+    outline-offset: 3px;
   }
 
   #meme {
@@ -137,20 +167,4 @@ import Layout from '../layout.astro';
     }
   }
 
-  @media (hover: hover) {
-    .button:hover {
-      background-color: hsl(0, 0%, 30%);
-    }
-  }
-
-  .button:focus-visible {
-    outline: 3px solid var(--color-brand, hsl(255, 64%, 38%));
-    outline-offset: 3px;
-  }
-
-  .buttons {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-  }
 </style>
