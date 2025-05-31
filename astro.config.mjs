@@ -5,10 +5,8 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   site: 'https://ppkor.no',
   redirects: {
-    '/j': 'https://www.linkedin.com/company/gr%C3%BCnderkoret-perfect-pitch/',
-    '/join':
-      'https://www.linkedin.com/company/gr%C3%BCnderkoret-perfect-pitch/',
-    '/bli-medlem':
-      'https://www.linkedin.com/company/gr%C3%BCnderkoret-perfect-pitch/',
+    '/j': 'https://tally.so/r/wk1gAr',
+    '/join': 'https://tally.so/r/wk1gAr',
+    '/bli-medlem': 'https://tally.so/r/wk1gAr',
   },
 });
