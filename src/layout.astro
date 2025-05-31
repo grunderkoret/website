@@ -1,0 +1,201 @@
+---
+const {
+  description = 'Er du gründer og liker å synge? Da er Perfect Pitch koret for deg! Vi er et ujålete kor av gründere++ med default åpent sinn',
+  canonical = Astro.url,
+} = Astro.props;
+---
+
+<html lang="no">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gründerkoret Perfect Pitch - Koret for og av gründere</title>
+
+    <link type="text/plain" rel="author" href="/humans.txt" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="var(--color-brand)" />
+
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:url" content={canonical} />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Gründerkoret Perfect Pitch – Koret for og av gründere"
+    />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/sharing.png" />
+    <meta property="og:site_name" content="Perfect Pitch" />
+  </head>
+  <body>
+    <!-- <a href="#main" class="skip-to-content">Hopp til innhold</a> -->
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  /* Skip to content */
+  .skip-to-content {
+    position: absolute;
+    z-index: 9999;
+    background: var(--color-brand);
+    color: white;
+    padding: 0.5rem 1rem;
+    transform: translateY(-120%);
+    transition: transform 0.3s;
+    left: 1rem;
+    top: 1rem;
+  }
+
+  .skip-to-content:focus {
+    transform: translateY(0);
+  }
+
+  :root {
+    --color-brand: hsl(255, 64%, 38%); /* Brand color (blue-ish) */
+    --color-secondary: hsl(79, 87%, 76%); /* Secondary color (green-ish) */
+  }
+
+  /* Box sizing rules */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* Prevent font size inflation */
+  html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+  }
+
+  /* Remove default margin in favour of better control in authored CSS */
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin-block-end: 0;
+  }
+
+  /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+  ul[role='list'],
+  ol[role='list'] {
+    list-style: none;
+  }
+
+  /* Set core body defaults */
+  body {
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+
+  /* Set shorter line heights on headings and interactive elements */
+  h1,
+  h2,
+  h3,
+  h4,
+  button,
+  input,
+  label {
+    line-height: 1.1;
+  }
+
+  /* Balance text wrapping on headings */
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  /* A elements that don't have a class get default styles */
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+  }
+
+  /* Make images easier to work with */
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+  }
+
+  /* Inherit fonts for inputs and buttons */
+  input,
+  button,
+  textarea,
+  select {
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  /* Make sure textareas without a rows attribute are not tiny */
+  textarea:not([rows]) {
+    min-height: 10em;
+  }
+
+  /* Anything that has been anchored to should have extra scroll margin */
+  :target {
+    scroll-margin-block: 5ex;
+  }
+
+  body {
+    --background-color: Canvas;
+    --text-color: CanvasText;
+
+    color-scheme: light dark;
+
+    background-color: var(--background-color);
+    color: var(--text-color);
+
+    min-height: 100dvh;
+    scroll-behavior: smooth;
+    font-family:
+      system-ui,
+      -apple-system,
+      sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'kern', 'liga';
+    margin: 0;
+    -webkit-text-size-adjust: 100%;
+    touch-action: manipulation;
+    caret-color: var(--color-brand);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      --background-color: hsl(0, 0%, 5%);
+    }
+  }
+
+  ::selection {
+    background: var(--color-brand);
+    color: #ffffff;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+</style>
