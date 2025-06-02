@@ -51,9 +51,7 @@ import Layout from '../layout.astro';
       <p>Vi har det gøy, helt enkelt – lyst til å bli med?</p>
 
       <div role="group" class="buttons">
-        <a href="https://ppkor.no/join" class="button primary">
-          Påmelding →
-        </a>
+        <a href="https://ppkor.no/join" class="button primary"> Påmelding → </a>
         <a
           class="button"
           href="https://www.linkedin.com/company/gr%C3%BCnderkoret-perfect-pitch/"
@@ -100,7 +98,7 @@ import Layout from '../layout.astro';
 
     gap: 1rem;
   }
- 
+
   .buttons {
     display: flex;
     flex-direction: row;
@@ -129,7 +127,7 @@ import Layout from '../layout.astro';
       background-color: var(--color-brand, hsl(255, 64%, 38%));
     }
   }
-  
+
   @media (hover: hover) {
     .button:hover {
       background-color: hsl(0, 0%, 30%);
@@ -145,17 +143,17 @@ import Layout from '../layout.astro';
     outline-offset: 3px;
   }
 
-    .meme-image {
-      height: 250px;
-      visibility: hidden;
-      opacity: 0;
-      transition:
-        visibility 0s,
-        opacity 0.2s linear;
-    }
-    .meme-image.loaded {
-      visibility: visible;
-      opacity: 1;
+  .meme-image {
+    height: 250px;
+    visibility: hidden;
+    opacity: 0;
+    transition:
+      visibility 0s,
+      opacity 0.2s linear;
+  }
+  .meme-image.loaded {
+    visibility: visible;
+    opacity: 1;
   }
 
   @media screen and (max-width: 600px) {
@@ -172,5 +170,4 @@ import Layout from '../layout.astro';
       display: none;
     }
   }
-
 </style>
